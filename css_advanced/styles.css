@@ -1,0 +1,458 @@
+/********************************************* Ajout des différentes polices d'écriture ********************************************/
+
+@font-face { /* Bold */
+    font-family: 'SSP_Bold';
+    src: url(Fonts/SourceSansPro-Bold.otf);
+}
+
+@font-face { /* Light */
+    font-family: 'SSP_Light';
+    src: url(Fonts/SourceSansPro-Light.otf);
+}
+
+@font-face { /* Italic */
+    font-family: 'SSP_Italic';
+    src: url(Fonts/SourceSansPro-It.otf);
+}
+
+@font-face { /* Black */
+    font-family: 'SSP_Black';
+    src: url(Fonts/SourceSansPro-Black.otf);
+}
+
+@font-face { /* Regular */
+    font-family: 'SSP_Regular';
+    src: url(Fonts/SourceSansPro-Regular.otf);
+}
+
+@font-face { /* Semibold */
+    font-family: 'SSP_Semibold';
+    src: url(Fonts/SourceSansPro-Semibold.otf);
+}
+
+/*********************************************** Styles s'appliquant à toute la page ***********************************************/
+
+h1 {
+    text-align: center;
+}
+
+body{
+    background-color: rgb(7, 22, 41);
+    /*margin-inline: 0;*/
+}
+
+
+/************************************************** Styles s'appliquant au Header **************************************************/
+
+header {
+    padding-top: 1em;
+    width: 80%; /* Permet de modifier la taille du Header */
+    margin: 0 auto;/* Permet de centrer le Header sur la page */
+    display:flex; /* Permet d'alligner les textes avec le logo */
+    position: relative; /* Nécessaire pour que le Background remonte jusqu'au Header */
+    z-index: 2; /* Permet d'afficher le texte du Header par dessus le Background */
+}
+
+/* Style s'apliquant aux ancres des liens du Header */
+header a {
+    color: white; /* Couleur tu texte */
+    text-decoration: none; /* Retire la barre sous le lien */
+    font-size: 12px; /* Taille de la police */
+    font-family: 'SSP_Bold', sans-serif; /* Police de caractère utilisée */
+}
+
+/* Style s'appiquant au Menu (Coureses, Prices, Login) */
+.Menu {
+    display: flex;
+    gap: 40%; /* Dù au display flex, ça permet d'ajouter un espace entre les différents liens */
+    margin: auto 75%; /* Permet de changer l'emplacement du Menu (auto : haut et bas, 75% gauche et droite) */
+}
+
+
+/************************************************** Styles s'appliquant à Main_Part **************************************************/
+
+.Main_Part {
+    background: none; /* Supression de tout fond direct pour éviter tout conflit */
+    position: relative; /* Nécessaire pour bien positionner le Background */
+    z-index: 1; /* Nécessaire pour afficher le texte au dessus du Background */
+    padding-bottom: 5%; /* Ajoute un espace à la fin du bloc Main_Part */
+}
+
+.Main_Part::before {
+    content: ""; /* Nécessaire pour rendre le pseudo-élément visible */
+
+    position: absolute; /* Permet de placer le pseudo-élément, ici le Background, où on veut */
+    left: 0; /* Permet de positionner l'image à la bordure gauche */
+    top: -14em;        /* Remonte l'image vers le haut, pour atteindre le Header */
+
+    width: 100%;      /* Largeur du pseudo élément prenant toute la largeur de la page */
+    height: calc(100% + 14em);
+
+    background: url(../html_advanced/Assets/Background.png); /* Background */
+    background-position: center top; /* Centre l'image sur la page */
+    background-size: cover; /* L'image prend toute la place dans .Main_Part */
+    background-repeat: no-repeat; /* Pas de répétition de l'image */
+
+    z-index: -1; /* Positionnement de l'image derrière les textes */
+}
+
+.Main_Part h2 {
+    color: rgb(255, 255, 255); /* Change la couleur du texte */
+    font-size: 32px; /* Taille de la police */
+    font-family: 'SSP_Light', sans-serif; /* Police de caractère utilisée */
+    text-align: center; /* Centre le texte */
+    padding-top: 7.5%;
+    padding-bottom: 2.5%;
+}
+
+#Learn {
+    color: rgb(194, 113, 255); /* Change la couleur du texte */
+    font-family: 'SSP_Bold', sans-serif; /* Police de caractère utilisée */
+}
+
+/* Styles s'appliquant à la partie liée à l'id Main_Title */
+#Main_Title h1 {
+    font-size: 120px; /* Taille de la police */
+    font-family: 'SSP_Bold', sans-serif; /* Police de caractère utilisée */
+    color: rgb(255, 255, 255); /* Couleur du texte */
+    margin-block-end: 0; /* Suppression de l'espace mis automatiquement après le texte */
+    padding-top: 7.5%;
+}
+
+#Main_Title p{
+    font-size: 16px; /* Taille de la police */
+    font-family: 'SSP_Bold', sans-serif; /* Police de caractère utilisée */
+    color: rgb(255, 255, 255); /* Couleur du texte */
+    margin-block-start: 0; /* Suppression de l'espace mis automatiquement avant le texte */
+    text-align: center; /* Centre le texte */
+    padding-bottom: 1.5%;
+}
+
+#Main_Title button {
+    /*width: 8%;*/
+    padding: 0.75%;
+    display: block;/* Permet de voir le bouton comme un bloc */
+    margin:auto; /* Permet de centrer le bouton sur la page dù au display bloc */
+    background-color: rgb(194, 113, 255); /* Change la couleur du bouton */
+    color: rgb(255, 255, 255); /* Change la couleur du texte du bouton */
+    font-size: 14px; /* Taille de la police */
+    font-family: 'SSP_Semibold', sans-serif; /* Police de caractère utilisée */
+    border: none; /* Supprime la bordure autour du bouton */
+    border-radius: 22px; /* Arrondi les coins du bouton */
+    -webkit-border-radius: 22px;
+    -moz-border-radius: 22px;
+    -ms-border-radius: 22px;
+    -o-border-radius: 22px;
+    -webkit-border-radius: 22px;
+}
+
+/* Style s'appliquant aux lignes de texte sous le "Get Schooled" */
+.Lines
+{
+    display: flex;
+    justify-content: center; /* centre les 3 <p> sur la page */
+    gap: 3.5%;               /* espacement horizontal entre les <p> */
+}
+
+/* Styles s'appliquant à la partie liée à la classe Pros */
+
+.Pros{
+    display: flex; /* Permet d'alligner les différents blocs de la classe Pros */
+    justify-content: center; /* centre les blocs de la classe Pros sur la page */
+    gap: 10%;               /* espacement horizontal entre les blocs de la classe Pros */
+}
+
+/**/
+
+.Pros img{
+    color: rgb(255, 255, 255);
+    border-radius: 50%; /* Arrondit les images pour les afficher en forme de rond */
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.Pros h3{
+    color: rgb(255, 255, 255); /* Change la couleur du texte */
+    font-size: 18px; /* Taille de la police */
+    text-align: center; /* Centre le texte dans le bloc */
+    font-family: 'SSP_Black', sans-serif; /* Police de caractère utilisée */
+}
+
+.Pros p{
+    color: rgb(255, 255, 255); /* Change la couleur du texte */
+    font-size: 16px; /* Taille de la police */
+    font-family: 'SSP_Italic', sans-serif; /* Police de caractère utilisée */
+    text-align: center; /* Centre le texte dans le bloc */
+    line-height: 1.7; /* Ajout d'un petit espacement entre les lignes du paragraphe */
+}
+
+/****************************************** Styles s'appliquant à la partie Testimonials  ******************************************/
+
+.Testimonials{
+    background-color: rgb(194, 113, 255); /* Change la couleur de l'arrière plan */
+    padding: 5% 0;
+    display: flex;
+    justify-content: center;
+}
+
+.Testimonials blockquote{
+    font-size: 22px; /* Taille de la police */
+    font-family: 'SSP_Regular', sans-serif; /* Police de caractère utilisée */
+    color: rgb(255, 255, 255); /* Change la couleur du texte */
+    margin: auto 0;
+}
+
+.Testimonials img{
+    color: rgb(255, 255, 255);
+    border-radius: 50%; /* Arrondit les images pour les afficher en forme de rond */
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.Testimonials p{
+    color: rgb(255, 255, 255); /* Change la couleur du texte */
+}
+
+/* Style s'appliquant aux éléments de la classe Testimony */
+.Testimony{
+    display: flex;
+    align-items: center;
+    gap: 5em;
+}
+
+#Name {
+    font-size: 22px; /* Taille de la police */
+    font-family: 'SSP_Bold', sans-serif; /* Police de caractère utilisée */
+    margin-block-end: 0; /* Suppression de l'espace mis automatiquement avant le texte */
+}
+
+#Description {
+    font-size: 22px; /* Taille de la police */
+    font-family: 'SSP_Italic', sans-serif; /* Police de caractère utilisée */
+    margin-block-start: 0; /* Suppression de l'espace mis automatiquement avant le texte */
+}
+
+/******************************************** Styles s'appliquant à la partie Tutorials ********************************************/
+
+.Tutorials{
+    padding-top: 4%;
+    padding-bottom: 4%;
+    background-color: rgb(255, 255, 255); /* Change la couleur de l'arrière plan */
+
+}
+
+.Tutorials h1{
+    font-size: 32px; /* Taille de la police */
+    font-family: 'SSP_Light', sans-serif; /* Police de caractère utilisée */
+    text-align: center;
+    padding-bottom: 3%;
+}
+
+#Popular {
+    color: rgb(194, 113, 255); /* Change la couleur du texte */
+    font-family: 'SSP_Bold', sans-serif; /* Police de caractère utilisée */
+}
+
+
+.Videos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+}
+
+.Videos h2{
+    font-size: 16px; /* Taille de la police */
+    font-family: 'SSP_Bold', sans-serif; /* Police de caractère utilisée */
+}
+
+.Videos p{
+    font-size: 14px; /* Taille de la police */
+    font-family: 'SSP_Regular', sans-serif; /* Police de caractère utilisée */
+    color: rgb(7, 22, 41, 0.5);
+    line-height: 1.7; /* Ajout d'un petit espacement entre les lignes du paragraphe */
+}
+
+.Author{
+    display: flex;
+    align-items: center;
+    gap: 5%
+}
+
+.Author img{
+    border-radius: 50%; /* Arrondit les images pour les afficher en forme de rond */
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    width: 20%;
+}
+
+.Author h3{
+    font-size: 14px; /* Taille de la police */
+    font-family: 'SSP_Semibold', sans-serif; /* Police de caractère utilisée */
+    color: rgb(194, 113, 255);
+}
+
+
+.Rating{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Rating p{
+    font-size: 14px; /* Taille de la police */
+    font-family: 'SSP_Semibold', sans-serif; /* Police de caractère utilisée */
+    color: rgb(194, 113, 255);
+}
+
+
+/***************************************** Styles s'appliquant à la partie Free_Membership *****************************************/
+
+.Free_Membership {
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+}
+
+.Free_Membership h1 {
+    font-size: 32px; /* Taille de la police */
+    font-family: 'SSP_Light', sans-serif; /* Police de caractère utilisée */
+    color: rgb(255, 255, 255);
+    padding-bottom: 2.5%;
+}
+
+#Free {
+    color: rgb(194, 113, 255); /* Change la couleur du texte */
+    font-family: 'SSP_Bold', sans-serif; /* Police de caractère utilisée */
+}
+
+.Free_Membership button {
+    padding: 13px;
+    display: block;/*  */
+    margin:auto; /* Permet de centrer le bouton sur la page */
+    background-color: rgb(194, 113, 255); /* Change la couleur du bouton */
+    color: rgb(255, 255, 255); /* Change la couleur du texte du bouton */
+    font-size: 14px; /* Taille de la police */
+    font-family: 'SSP_Semibold', sans-serif; /* Police de caractère utilisée */
+    border: none; /* Supprime la bordure autour du bouton */
+    border-radius: 22px; /* Arrondi les coins du bouton */
+    -webkit-border-radius: 22px;
+    -moz-border-radius: 22px;
+    -ms-border-radius: 22px;
+    -o-border-radius: 22px;
+    -webkit-border-radius: 22px;
+}
+
+
+
+.Membership {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    padding-bottom: 4%;
+}
+
+.Membership img {
+    color: rgb(255, 255, 255); /* Couleur du texte */
+    display: block;/* Permet de voir l'image comme un bloc */
+    margin:auto; /* Permet de centrer l'image sur la page dù au display bloc */
+    padding-bottom: 10%;
+}
+
+.Membership h2 {
+    font-size: 18px; /* Taille de la police */
+    font-family: 'SSP_Semibold', sans-serif; /* Police de caractère utilisée */
+    color: rgb(255, 255, 255); /* Couleur du texte */
+    text-align: center; /* Centre son texte au sein de son bloc */
+}
+
+.Membership p {
+    font-size: 14px; /* Taille de la police */
+    font-family: 'SSP_Regular', sans-serif; /* Police de caractère utilisée */
+    color: rgb(255, 255, 255); /* Couleur du texte */
+    text-align: center; /* Centre le texte au sein de son bloc */
+    line-height: 1.7; /* Ajout d'un petit espacement entre les lignes du paragraphe */
+}
+
+/********************************************** Styles s'appliquant à la partie F.A.Q. *********************************************/
+
+.FAQ {
+    padding-top: 1%; /* Ajout d'un espace en haut du bloc */
+    padding-bottom: 1%; /* Ajout d'un espace en bas du bloc */
+    background-color: rgb(255, 255, 255);
+}
+
+.FAQ h1 {
+    font-size: 60px; /* Taille de la police */
+    font-family: 'SSP_Light', sans-serif; /* Police de caractère utilisée */
+    padding-bottom: 1%; /* Ajout d'un espace sous le titre */
+}
+
+.FAQ_Rows {
+    width: 50%; /* Permet de modifier la taille du Bloc F.A.Q. */
+    margin: 0 auto;/* Permet de centrer le bloc F.A.Q. sur la page */
+}
+
+.row {
+    display: flex; /* Regroupe les enfants de la class row sur la même ligne */
+    justify-content: space-between; /* Permet de séparer les blocs de part et d'autres de la page */
+    padding-bottom: 3%; /* Ajout d'un espace entre les colonnes */
+}
+
+.row h2 {
+    font-size: 16px; /* Taille de la police */
+    font-family: 'SSP_Bold', sans-serif; /* Police de caractère utilisée */
+    padding-bottom: 3%; /* Ajout d'un espace sous le titre */
+}
+
+.row p {
+    font-size: 14px; /* Taille de la police */
+    font-family: 'SSP_Regular', sans-serif; /* Police de caractère utilisée */
+    color: rgb(7, 22, 41, 0.5); /* Couleur du texte */
+
+}
+
+
+/************************************************** Styles s'appliquant au Footer **************************************************/
+
+.Footer {
+    padding-top: 3%;
+    padding-bottom: 1%;
+    width: 70%; /* Permet de modifier la taille du Footer */
+    margin: 0 auto;/* Permet de centrer le Footer sur la page */
+}
+
+.Footer p {
+    font-size: 12px; /* Taille de la police */
+    font-family: 'SSP_Regular', sans-serif; /* Police de caractère utilisée */
+    color: rgb(255, 255, 255, 0.35); /* Couleur du texte */
+    text-align: center;
+}
+
+.Img_Footer {
+    display: flex; /* Regroupe les enfants de la class row sur la même ligne */
+    justify-content: space-between; /* Permet de séparer les blocs de part et d'autres de la page */
+    text-align: center;
+
+}
+
+.Img_Footer img {
+    color: rgb(255, 255, 255);
+}
+
+.Reseaux {
+    display: flex;           /* Met les images sur une ligne */
+    gap: 2em;               /* Espace entre chaque image */
+    justify-content: center; /* Centre les images dans le conteneur */
+    align-items: center;     /* Aligne verticalement si images différentes hauteurs */
+}
+
+.Reseaux img {
+    width: 2em; /* largeur fixe pour toutes les icônes */
+    height: auto;
+}
