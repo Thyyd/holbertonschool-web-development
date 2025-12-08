@@ -11,6 +11,6 @@ Projet durant lequel nous avons pas à pas rédigé le code CSS d'un code HTML c
 ## Styles et fonctionnalités ajoutés
 
 - Couleurs et typographie pour améliorer la lisibilité
-- Mise en page avec Flexbox / Grid
+- Mise en page avec Flexbox
 - Header et footer stylisés
 - Mise en forme des listes et paragraphes
